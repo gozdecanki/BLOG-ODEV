@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogOdev.Web", "BlogOdev.Web\BlogOdev.Web.csproj", "{74FB46BE-3972-4483-82A1-8A7718256DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogOdev.Data", "BlogOdev.Data\BlogOdev.Data.csproj", "{055640E9-4C19-48CD-8237-E6A92F5E46C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74FB46BE-3972-4483-82A1-8A7718256DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FB46BE-3972-4483-82A1-8A7718256DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FB46BE-3972-4483-82A1-8A7718256DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FB46BE-3972-4483-82A1-8A7718256DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055640E9-4C19-48CD-8237-E6A92F5E46C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055640E9-4C19-48CD-8237-E6A92F5E46C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055640E9-4C19-48CD-8237-E6A92F5E46C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055640E9-4C19-48CD-8237-E6A92F5E46C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A661E9F7-1A8F-4C12-B207-3D2B24A1C8E9}
+	EndGlobalSection
+EndGlobal

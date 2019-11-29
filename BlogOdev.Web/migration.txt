@@ -1,0 +1,6 @@
+﻿add-migration Initial -Context "BlogContext" -StartupProject "BlogOdev.Web" -Project "BlogOdev.Data"
+
+update-database -Context "BlogContext" -StartupProject "BlogOdev.Web" -Project "BlogOdev.Data"
+
+
+remove-migration -Context "BlogContext" -StartupProject "BlogOdev.Web" -Project "BlogOdev.Data"
