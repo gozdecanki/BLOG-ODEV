@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using BlogOdev.Data.Context;
+using BlogOdev.Data.Enums;
 using BlogOdev.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +15,7 @@ namespace BlogOdev.Web.Controllers
         }
         public IActionResult Index()
         {
-            Page page = _blogContext.Pages.FirstOrDefault(a=>!a.Deleted && a.PageKind==Data.Enums.PageKind.About);
+            Page page = _blogContext.Pages.FirstOrDefault(a=>!a.Deleted && a.PageKind== PageKind.About);
             return View(page);
         }
     }

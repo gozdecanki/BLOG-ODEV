@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BlogOdev.Data.Dto
 {
-   public class UserLoginDto
+    public class UserLoginDto
     {
         [Required,MinLength(6),MaxLength(345)]
         public string Email { get; set; }

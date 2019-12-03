@@ -1,12 +1,9 @@
 ﻿using BlogOdev.Data.Abstraction;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace BlogOdev.Data.Models
 {
-   public class Comment: Entity
+    public class Comment: Entity
     {
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
@@ -26,6 +23,6 @@ namespace BlogOdev.Data.Models
 
         public int VoteUp { get; set; }
 
-        public string DownUp { get; set; }
+        public int DownUp { get; set; }
     }
 }

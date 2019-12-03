@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogOdev.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Seed4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Category",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -21,7 +21,7 @@ namespace BlogOdev.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Category", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -120,9 +120,9 @@ namespace BlogOdev.Data.Migrations
                 {
                     table.PrimaryKey("PK_Blogs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Blogs_Category_CategoryId",
+                        name: "FK_Blogs_Categories_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Category",
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -147,7 +147,7 @@ namespace BlogOdev.Data.Migrations
                     Nickname = table.Column<string>(maxLength: 50, nullable: true),
                     Email = table.Column<string>(maxLength: 320, nullable: true),
                     VoteUp = table.Column<int>(nullable: false),
-                    DownUp = table.Column<string>(nullable: true)
+                    DownUp = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -165,6 +165,26 @@ namespace BlogOdev.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreateDate", "Deleted", "Description", "Name" },
+                values: new object[] { 1, new DateTime(2019, 12, 3, 16, 15, 41, 917, DateTimeKind.Utc), false, "...", "Aşk" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreateDate", "Deleted", "Description", "Name" },
+                values: new object[] { 2, new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), false, "!!!!", "Meşk" });
+
+            migrationBuilder.InsertData(
+                table: "Nationality",
+                columns: new[] { "Id", "Code", "CreateDate", "Deleted", "Name" },
+                values: new object[] { 1, "Tr", new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), false, "Türkiye" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "BirthDate", "CreateDate", "Deleted", "Email", "Gender", "Name", "NationalityId", "Password", "Surname", "Username" },
+                values: new object[] { 1, new DateTime(1992, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), false, "gozdecanki@gmail.com", 1, "Gözde", 1, "12345678", "Yılmaz", "gozde" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Blogs_CategoryId",
@@ -207,7 +227,7 @@ namespace BlogOdev.Data.Migrations
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Users");

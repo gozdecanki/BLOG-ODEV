@@ -1,12 +1,10 @@
 ﻿using BlogOdev.Data.Abstraction;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace BlogOdev.Data.Models
 {
-   public class Blog:Entity
+    public class Blog:Entity
     {
         public int UserId { get; set; }
 

@@ -14,7 +14,7 @@
     <script src="~/js/Page.js"></script>
 </head>
 
-<body>
+<body onload="Page.Init();">
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -26,7 +26,9 @@
 
                     if (userId != null && userId != 0)
                     {
-                        <div><a href="@Url.Action("Login","User")">Logout</a> </div>
+                        <div><a href="@Url.Action("New","Blog")">Yeni Yazı</a> </div>
+                        <div><a href="@Url.Action("LogoutAction","User")">Çıkış</a></div>
+
                     }
                     else
                     {
@@ -34,7 +36,9 @@
                     }
 
                 }
+                <div id="Module-Categories">
 
+                </div>
             </div>
             <div class="col-8"> @RenderBody()  </div>
 

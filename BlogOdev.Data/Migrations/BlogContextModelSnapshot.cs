@@ -68,7 +68,12 @@ namespace BlogOdev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new { Id = 1, CreateDate = new DateTime(2019, 12, 3, 16, 15, 41, 917, DateTimeKind.Utc), Deleted = false, Description = "...", Name = "Aşk" },
+                        new { Id = 2, CreateDate = new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), Deleted = false, Description = "!!!!", Name = "Meşk" }
+                    );
                 });
 
             modelBuilder.Entity("BlogOdev.Data.Models.Comment", b =>
@@ -87,7 +92,7 @@ namespace BlogOdev.Data.Migrations
 
                     b.Property<bool>("Deleted");
 
-                    b.Property<string>("DownUp");
+                    b.Property<int>("DownUp");
 
                     b.Property<string>("Email")
                         .HasMaxLength(320);
@@ -146,6 +151,10 @@ namespace BlogOdev.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Nationality");
+
+                    b.HasData(
+                        new { Id = 1, Code = "Tr", CreateDate = new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), Deleted = false, Name = "Türkiye" }
+                    );
                 });
 
             modelBuilder.Entity("BlogOdev.Data.Models.Page", b =>
@@ -213,6 +222,10 @@ namespace BlogOdev.Data.Migrations
                     b.HasIndex("NationalityId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new { Id = 1, BirthDate = new DateTime(1992, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), CreateDate = new DateTime(2019, 12, 3, 16, 15, 41, 919, DateTimeKind.Utc), Deleted = false, Email = "gozdecanki@gmail.com", Gender = 1, Name = "Gözde", NationalityId = 1, Password = "12345678", Surname = "Yılmaz", Username = "gozde" }
+                    );
                 });
 
             modelBuilder.Entity("BlogOdev.Data.Models.Blog", b =>
