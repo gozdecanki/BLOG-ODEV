@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogOdev.Data.Context;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogOdev.Web.Controllers
 {
@@ -17,7 +18,7 @@ namespace BlogOdev.Web.Controllers
         }
         public IActionResult Index()
         {
-            List<BlogOdev.Data.Models.Blog> blogs =  _blogContext.Blogs.OrderByDescending(a => a.CreateDate).ToList();
+            List<BlogOdev.Data.Models.Blog> blogs =  _blogContext.Blogs.Include(a=> a.User).OrderByDescending(a => a.CreateDate).ToList();
             return View(blogs);
         }
     }

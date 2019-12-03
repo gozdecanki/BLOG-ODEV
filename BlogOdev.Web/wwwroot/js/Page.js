@@ -7,7 +7,7 @@
             success: function (result) {
                 $("#Module-Categories").html(result);
             },
-            dataType:"html"
+            dataType: "html"
         });
 
     },
@@ -38,7 +38,7 @@
 
             var data = {
                 Name: name,
-                Surname:surname,
+                Surname: surname,
                 Message: message
             };
 
@@ -51,9 +51,9 @@
                 error: Page.Contact.Send_Callback_Error,
                 dataType: "json",
                 accepts: "application/json",
-                contentType:"application/json"
+                contentType: "application/json"
             });
-            
+
 
 
 
@@ -65,7 +65,7 @@
             console.log(result);
         },
 
-        Send_Callback_Error: function (request,status,error) {
+        Send_Callback_Error: function (request, status, error) {
             $("#Contact-Index-Sending").hide();
             $("#Contact-Index-Sent").hide();
             $("#Contact-Index-Form").show();
@@ -94,7 +94,7 @@
                     success: Page.User.Login.LoginButton_Callback,
                     error: Page.User.Login.LoginButton_Callback_Error,
                     dataType: "json",
-                    contentType:"application/json"
+                    contentType: "application/json"
                 });
 
 
@@ -108,16 +108,15 @@
                 console.log(error);
                 console.log(status);
                 console.log(request);
-               
-               
+
+
             }
         }
     },
 
     Blog: {
         New: {
-            Save: function ()
-            {
+            Save: function () {
                 var title = $("#Title").val();
                 var content = $("#Content").val();
                 var categoryId = parseInt($("#Category").val());
@@ -134,7 +133,7 @@
                     success: Page.Blog.New.Save_Callback,
                     error: Page.Blog.New.Save_Callback_Error,
                     dataType: "json",
-                    contentType:"application/json"
+                    contentType: "application/json"
 
                 });
             },
@@ -149,7 +148,30 @@
             }
         }
 
-    }
+    },
+    Manage: {
+        Login: {
+            Submit: function () {
+                var email = $("#Email").val();
+                var password = $("#Password").val();
 
+                var data = {
+                    Email: email,
+                    Password: password
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Manage/LoginAction",
+                    data: JSON.stringify(data),
+                    success: Page.Manage.Login.Submit_Callback,
+                    error: Page.Manage.Login.Submit_Callback_Error,
+                    dataType: "json",
+                    contentType: "application/json"
+                });
+            }
+        }
+    }
+}}
 
 }
