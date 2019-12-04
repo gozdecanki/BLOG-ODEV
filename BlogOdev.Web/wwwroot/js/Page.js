@@ -11,8 +11,6 @@
         });
 
     },
-
-
     Contact: {
         Send: function () {
             var name = $("#Name").val();
