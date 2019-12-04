@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -11,9 +13,17 @@
 </head>
 <body>
     <div class="container">
- <div class="row">
-     <div class="col-12">Menü</div>
- </div>
+        <div class="row">
+            <div class="col-12">
+                @{
+                    if (Context.Session.GetInt32("userId") != null)
+                    {
+                        <a href="@Url.Action("LogoutAction","Manage")">Çıkış yap</a>
+                        <a href="@Url.Action("NewBlog","Manage")">Yeni Yazı</a>
+                    }
+                }
+            </div>
+        </div>
         @RenderBody()
     </div>
 </body>
